@@ -20,6 +20,8 @@ console.log(cartItemName);
 
    let itemsName = cart.map(getItemName);
    itemsName.forEach(displayItems);
+   console.log(`-----------------------`);
+   itemsName.sort(displayItems);
 
    // calculate cost
 
@@ -28,5 +30,6 @@ console.log(cartItemName);
 
    }
 
-   let sum = cart.reduce(getItemCost, 0)
+   let sum = cart.reduce(getItemCost, 0) // 0 is where the count begins 
    console.log(sum);
+
