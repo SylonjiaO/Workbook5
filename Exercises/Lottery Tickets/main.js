@@ -14,30 +14,29 @@ let winningTickets = [
     { tixNum: "8751426", expires: "2020-09-15", prize: 100000 },
   ];
 
-  function loadWinningTicketsTable() {
-    const  winningTicketsTblBody = document.getElementById("winningTicketsTblBody");
- 
-    // loop
-for (const ticket of winningTickets) {
-    buildTicketRow(winningTicketsTblBody, ticket)
-}
- }
-
-function buildTicketRow(ticket, tableBody){
-// console.log(tableBody);
-// console.log(ticket);
-
-    let row = tableBody.insertRow(-1);
-    const cell1 = row.insertCell(0);
-    cell1.innerText = ticket.tixNum;
-    const cell2 = row.insertCell(1);
-    cell2.innerText = ticket.expires;
-    const cell3 = row.insertCell(2);
-    cell3.innerText = ticket.prize;
-
-}
-
   window.onload = () => {
     loadWinningTicketsTable();
-
-};
+  };
+  function loadWinningTicketsTable() {
+    const winningTicketsTblBody = document.getElementById(
+      "winningTicketsTblBody"
+    );
+    for (const ticket of winningTickets) {
+      buildTicketRow(winningTicketsTblBody, ticket);
+    }
+  }
+  
+  function buildTicketRow(tableBody, ticket) {
+    console.log(tableBody);
+    console.log(ticket);
+    let row = tableBody.insertRow(-1);
+  
+    let cell1 = row.insertCell(0);
+    cell1.innerText = ticket.tixNum;
+  
+    let cell2 = row.insertCell(1);
+    cell2.innerText = ticket.prize;
+  
+    let cell3 = row.insertCell(2);
+    cell3.innerText = ticket.expires;
+  }
